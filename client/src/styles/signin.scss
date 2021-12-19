@@ -1,0 +1,118 @@
+.signin {
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin: 50px auto;
+    padding: 50px 50px 25px;
+    max-width: 800px;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+
+    form {
+        p {
+            font-size: 2rem;
+        }
+
+        input {
+            width: 75%;
+            display: block;
+            font-size: 2rem;
+            padding: 5px 15px;
+            margin: 0 auto 50px;
+            border: 1px solid #000;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            color: #fff;
+            padding: 10px 25px;
+            background-color: #1F60DA;
+            border: none;
+            font-size: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #fff;
+
+            transition: 0.2s ease;
+
+            &:hover {
+                background-color: #4483DB;
+            }
+        }
+    }
+
+    &>p {
+        margin-top: 25px;
+        font-size: 1.25rem;
+
+        a {
+            color: #1F60DA;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .signin {
+        width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    .signin {
+        width: 95%;
+
+        &>h1 {
+            font-size: 2.5rem;
+        }
+
+        form {
+            input {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .signin {
+        .error {
+            font-size: 2rem;
+        }
+
+        form {
+            input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .signin {
+        form {
+            input {
+                font-size: 1.25rem;
+            }
+        }
+
+        &>p {
+            font-size: 1rem;
+        }
+    }
+}
