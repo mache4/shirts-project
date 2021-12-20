@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { signup } from "../actions/auth";
+import { signup } from "../redux/actions/auth";
 
 import "../styles/signup.scss";
 
@@ -15,11 +15,27 @@ const Signup = () => {
     const dispatch = useDispatch();
     const history = useNavigate();
 
+    const validateEmail = (email: any) => {
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email.match(validRegex))
+            return true;
+        return false;
+    }
+
     const formSubmit = (e: any) => {
         e.preventDefault();
         setError("");
 
-        // u koliko podaci nisu uneti i validate email i psw
+        if (!emailRef.current.value && !passwordRef.current.value)
+            return setError("Enter data");
+        if (!emailRef.current.value)
+            return setError("Enter email");
+        if (!passwordRef.current.value)
+            return setError("Enter password");
+        if (!passwordConfirmRef.current.value)
+            return setError("Confirm password");
+        if (!validateEmail(emailRef.current.value))
+            setError("Email is not valid");
         if (passwordRef?.current.value !== passwordConfirmRef?.current.value)
             return setError("Passwords don't match.");
 

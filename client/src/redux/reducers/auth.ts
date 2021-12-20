@@ -1,11 +1,11 @@
-import { AUTH, LOGOUT } from "../constants/actionTypes";
+import { AUTH, LOGOUT } from "../../constants/actionTypes";
 
 export default function authReducer(state = { authData: null }, action: any) {
     switch (action.type) {
         case AUTH:
             localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
 
-            return { ...state, authData: action.data, loading: false, errors: null };
+            return { ...state, authData: action.data, loading: false, errors: action.errors };
         case LOGOUT:
             localStorage.clear();
 

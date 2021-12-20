@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/signin.scss";
-import { signin } from "../actions/auth";
+import { signin } from "../redux/actions/auth";
 
 const Signin = () => {
     const emailRef = useRef<any>();
@@ -13,10 +13,18 @@ const Signin = () => {
     const history = useNavigate();
     const [error, setError] = useState("");
 
+
+
     const formSubmit = (e: any) => {
-        // u koliko podaci nisu uneti
         e.preventDefault();
         setError("");
+
+        if (!emailRef.current.value && !passwordRef.current.value)
+            return setError("Enter data");
+        if (!emailRef.current.value)
+            return setError("Enter email");
+        if (!passwordRef.current.value)
+            return setError("Enter password");
 
         dispatch(signin({
             email: emailRef?.current.value,
@@ -29,7 +37,7 @@ const Signin = () => {
             <h1>Signin</h1>
             {error === "" ? null : <h1 className="error" style={{ color: 'red' }}>{error}.</h1>}
             <form onSubmit={formSubmit}>
-                <input type="text" ref={emailRef} placeholder="Enter Your Email" />
+                <input id="email" type="text" ref={emailRef} placeholder="Enter Your Email" />
                 <input type="password" ref={passwordRef} placeholder="Enter Your Password" />
                 <button type="submit">Signin</button>
             </form>

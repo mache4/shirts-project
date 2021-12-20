@@ -59,7 +59,6 @@ const Navbar = () => {
                             pathname: '/signin'
                         }}><button className="login-btn">Signin</button></NavLink> :
                         <button className="logout-btn" onClick={logout}>Logout</button>}</li>
-                    {!user?.result ? null : <li className="nav__item">{user.result.email}</li>}
                 </ul>
             </nav>
             <i className="fas fa-bars" /*onClick={showSidebarHandler}*/></i>
