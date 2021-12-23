@@ -1,0 +1,150 @@
+.home {
+    &>h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-weight: 600;
+        margin: 50px 50px;
+    }
+
+    .slides {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .slide__img {
+            width: 400px;
+        }
+
+        .slide__img.big {
+            z-index: 20;
+            width: 500px;
+        }
+    }
+}
+
+@media (max-width: 1375px) {
+    .home {
+        .slides {
+            .slide__img {
+                width: 300px;
+
+                &.big {
+                    width: 400px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .home {
+        &>h1 {
+            font-size: 3rem;
+        }
+
+        .slides {
+            .slide__img {
+                width: 250px;
+
+                &.big {
+                    width: 350px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .home {
+        .slides {
+            .slide__img {
+                &:first-child {
+                    margin-right: -75px;
+                }
+
+                &:last-child {
+                    margin-left: -75px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .home {
+        .slides {
+            .slide__img {
+                width: 200px;
+
+                &.big {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
+        &>h1 {
+            font-size: 2.25rem;
+        }
+
+        .slides {
+            .slide__img {
+                width: 175px;
+
+                &.big {
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .home {
+        .slides {
+            .slide__img {
+                width: 150px;
+
+                &.big {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .home {
+        &>h1 {
+            margin: 50px 25px;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .home {
+        .slides {
+            .slide__img {
+                width: 125px;
+
+                &.big {
+                    width: 175px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .home {
+        &>h1 {
+            font-size: 1.75rem;
+        }
+    }
+}

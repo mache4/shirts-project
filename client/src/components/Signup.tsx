@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
+import { REMOVE_ERRORS } from "../constants/actionTypes";
 
 import { signup } from "../redux/actions/auth";
 
@@ -14,6 +15,8 @@ const Signup = () => {
     const [error, setError] = useState("");
     const dispatch = useDispatch();
     const history = useNavigate();
+    const location = useLocation();
+    const errorData = useSelector((state: any) => state.authReducer.error)
 
     const validateEmail = (email: any) => {
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -21,6 +24,17 @@ const Signup = () => {
             return true;
         return false;
     }
+
+    useEffect(() => {
+        dispatch({ type: REMOVE_ERRORS });
+    }, [location, dispatch]);
+
+    useEffect(() => {
+        if (errorData || errorData !== "")
+            setError(errorData);
+        else
+            setError("");
+    }, [errorData]);
 
     const formSubmit = (e: any) => {
         e.preventDefault();
@@ -37,7 +51,9 @@ const Signup = () => {
         if (!validateEmail(emailRef.current.value))
             setError("Email is not valid");
         if (passwordRef?.current.value !== passwordConfirmRef?.current.value)
-            return setError("Passwords don't match.");
+            return setError("Passwords don't match");
+        if (errorData || errorData !== "")
+            setError(errorData);
 
         dispatch(signup({
             email: emailRef?.current.value,
@@ -48,8 +64,7 @@ const Signup = () => {
     return (
         <div className="signup">
             <h1>Signup</h1>
-            {/* {console.log(error)} */}
-            {error === "" ? null : <h1 className="error" style={{ color: 'red' }}>{error}.</h1>}
+            <h1 className="error" style={{ color: 'red', opacity: !error || error === "" ? 0 : 1 }}>{error}.</h1>
             <form onSubmit={formSubmit}>
                 <input type="text"
                     id="email"

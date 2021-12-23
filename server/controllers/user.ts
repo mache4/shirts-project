@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 const secret = "test";
 
 export const signup = async (req: any, res: any) => {
-    const { email, password, confirmPassword } = req.body;
+    const { email, password } = req.body;
 
     try {
         const oldUser = await User.findOne({ email });
@@ -16,7 +16,7 @@ export const signup = async (req: any, res: any) => {
 
         const result = await User.create({ email, password: hashedPassword });
 
-        const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "2min" });
+        const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "2h" });
 
         res.status(201).json({ result, token });
     } catch (error) {
@@ -38,7 +38,7 @@ export const signin = async (req: any, res: any) => {
 
         if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
 
-        const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: "2min" });
+        const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: "2h" });
 
         res.status(200).json({ result: oldUser, token });
     } catch (err) {

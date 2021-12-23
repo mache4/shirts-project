@@ -1,0 +1,42 @@
+.your-cart {
+    &>h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-weight: 600;
+        margin: 50px 50px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .your-cart {
+        &>h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .your-cart {
+        &>h1 {
+            font-size: 2.25rem;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .your-cart {
+        &>h1 {
+            margin: 50px 25px;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .your-cart {
+        &>h1 {
+            font-size: 1.75rem;
+        }
+    }
+}

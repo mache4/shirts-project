@@ -1,14 +1,15 @@
 import Navbar from "./components/Navbar";
-import "./App.scss";
+import "./app.scss";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
-import YourOrders from "./components/YourOrder";
+import YourOrders from "./components/YourOrders";
 import YourCart from "./components/YourCart";
 
 const App = () => {
+
     return (
         <div className="App">
             <Navbar />

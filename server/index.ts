@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 import userRouter from "./routes/user";
+import ordersRouter from "./routes/orders";
 import mongoose from "mongoose";
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/user", userRouter);
+app.use("/orders", ordersRouter);
 
 const password = "branislav123";
 

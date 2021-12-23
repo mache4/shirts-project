@@ -6,9 +6,8 @@ export const signin = (formData: any, router: any) => async (dispatch: any) => {
         const { data } = await api.signIn(formData);
 
         dispatch({ type: AUTH, data });
-    } catch (error) {
-        dispatch({ type: AUTH, errors: error });
-        return console.log(error);
+    } catch (error: any) {
+        return dispatch({ type: AUTH, error: error.response.data.message });
     }
     router('/');
 }
@@ -18,9 +17,8 @@ export const signup = (formData: any, router: any) => async (dispatch: any) => {
         const { data } = await api.signUp(formData);
 
         dispatch({ type: AUTH, data });
-    } catch (error) {
-        dispatch({ type: AUTH, errors: error });
-        return console.log(error);
+    } catch (error: any) {
+        return dispatch({ type: AUTH, error: error.response.data.message });
     }
     router('/');
 }

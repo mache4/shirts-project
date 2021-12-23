@@ -9,7 +9,11 @@
     h1 {
         font-size: 3rem;
         font-weight: 500;
-        margin-bottom: 50px;
+    }
+
+    .error {
+        font-size: 2rem;
+        margin: 25px;
     }
 
     form {
@@ -92,7 +96,7 @@
 @media (max-width: 550px) {
     .signin {
         .error {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         form {

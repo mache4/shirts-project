@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode';
+import { LOGOUT } from "../constants/actionTypes";
 import "../styles/navbar.scss";
 
 const Navbar = () => {
     const history = useNavigate();
     const location = useLocation();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile') || "{}"));
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const profile: any = localStorage.getItem('profile');
@@ -26,6 +29,7 @@ const Navbar = () => {
 
     const logout = () => {
         localStorage.clear();
+        dispatch({ type: LOGOUT });
 
         history("/signin");
     }
@@ -54,7 +58,7 @@ const Navbar = () => {
                         pathname: '/your-orders'
                     }}>Your Orders</NavLink></li>
 
-                    <li className="nav__item">{!localStorage.getItem("profile") ?
+                    <li className="nav__item">{!localStorage.getItem("profile") || localStorage.getItem("profile") === "{}" ?
                         <NavLink to={{
                             pathname: '/signin'
                         }}><button className="login-btn">Signin</button></NavLink> :
