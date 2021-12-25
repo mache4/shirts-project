@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getOrders } from "../redux/actions/orders";
+import Order from "./Order";
+
+import "../styles/your-orders.scss";
 
 const YourOrders = () => {
     const user = JSON.parse(localStorage.getItem('profile') || "{}");
@@ -14,18 +17,18 @@ const YourOrders = () => {
     let orders: any = null;
 
     if (ordersData)
-        orders = ordersData.map((order: any) => {
-            // return <Order />;
-            return order.items[0];
-        });
+        orders = ordersData.map((order: any) => <Order
+            key={order._id}
+            customer={order.customer}
+            items={order.items}
+            totalPrice={order.totalPrice} />);
 
     return (
         <div className="your-orders">
-            {!user?.result ? null : <p>{user.result.email}</p>}
-            {/* {console.log("user: ", user?.result?.email)}
-            {console.log("orders: ", ordersData)} */}
-
-            {orders}
+            {!localStorage.getItem("profile") || localStorage.getItem("profile") === "{}" ?
+                <h1 className="message">You need to signin to see your orders.</h1> :
+                orders
+            }
         </div>
     );
 }

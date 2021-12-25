@@ -1,0 +1,75 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    z-index: 200;
+
+    .cross {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        color: #1F60DA;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 75px;
+
+        li {
+            display: inline-block;
+            margin: 10px 0;
+            width: 100%;
+
+            a {
+                display: block;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+                cursor: pointer;
+                border: 1px solid #0000ff;
+                background-color: #1F60DA;
+                font-size: 1.5rem;
+                cursor: pointer;
+                width: 60%;
+                margin: 0 auto;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .signin-btn,
+            .logout-btn {
+                border: none;
+                background-color: transparent;
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        ul {
+            li {
+                a {
+                    font-size: 1.25rem;
+                    width: 80%;
+                }
+
+                .signin-btn,
+                .logout-btn {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+}

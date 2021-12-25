@@ -1,0 +1,128 @@
+.cart-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000;
+    // border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    width: 75%;
+    text-align: center;
+    padding: 0 0 0 10px;
+
+    .remove-item {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 1.5rem;
+        color: red;
+        cursor: pointer;
+    }
+
+    .item-price {
+        margin-left: 50px;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 100px;
+    }
+
+    .item-number {
+        font-size: 1.5rem;
+        font-weight: 600;
+        width: 75px;
+    }
+
+    .item-name {
+        font-size: 2rem;
+        width: 250px;
+    }
+
+    img.item-image {
+        margin-right: 50px;
+        width: 10%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .cart-item {
+        .remove-item {
+            font-size: 1.25rem;
+        }
+
+        .item-price {
+            margin-left: 0px;
+            font-size: 1.5rem;
+            width: 100px;
+        }
+
+        .item-number {
+            font-size: 1.5rem;
+            width: 50px;
+        }
+
+        .item-name {
+            font-size: 1.5rem;
+            width: 250px;
+        }
+
+        img.item-image {
+            width: 12%;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .cart-item {
+        .remove-item {
+            top: 5px;
+            left: 10px;
+            font-size: 1rem;
+        }
+
+        .item-price {
+            margin-left: 10px;
+            font-size: 1.25rem;
+            width: 50px;
+        }
+
+        .item-number {
+            font-size: 1.25rem;
+        }
+
+        .item-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            width: 150px;
+        }
+
+        img.item-image {
+            width: 15%;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        .item-name {
+            font-size: 1rem;
+        }
+
+        .item-price {
+            font-size: 1rem;
+        }
+
+        .item-number {
+            font-size: 1rem;
+            width: 35px;
+        }
+    }
+}

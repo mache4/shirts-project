@@ -13,9 +13,9 @@ export const submitOrder = (orderData: any, router: any) => async (dispatch: any
     router('/');
 }
 
-export const getOrders = (email: any) => async (dispatch: any) => {
+export const getOrders = (customer: any) => async (dispatch: any) => {
     try {
-        const { data } = await api.getOrders(email);
+        const { data } = await api.getOrders(customer);
 
         dispatch({ type: FETCH_ALL, data });
     } catch (error) {

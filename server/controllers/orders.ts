@@ -1,7 +1,7 @@
 import Order from "../models/order";
 
 export const submitOrder = async (req: any, res: any) => {
-    const { email, items } = req.body;
+    const { email, items, totalPrice } = req.body;
 
     try {
         const result = await Order.create({ email, items });
@@ -13,10 +13,10 @@ export const submitOrder = async (req: any, res: any) => {
 }
 
 export const getOrders = async (req: any, res: any) => {
-    const { email } = req.params;
+    const { customer } = req.params;
 
     try {
-        const orders = await Order.find({ email });
+        const orders = await Order.find({ customer });
         res.status(200).json(orders);
     } catch (error) {
         res.status(404).json({ message: "Something went wrong" });

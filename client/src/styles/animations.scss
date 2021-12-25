@@ -10,6 +10,15 @@
     animation: fadeInRight .8s;
 }
 
+@media (max-width: 900px) {
+
+    .fadeInLeft,
+    .fadeInRight,
+    .fadeInTop {
+        animation: none;
+    }
+}
+
 @keyframes fadeInLeft {
     from {
         opacity: 0;

@@ -16,7 +16,7 @@ const Signup = () => {
     const dispatch = useDispatch();
     const history = useNavigate();
     const location = useLocation();
-    const errorData = useSelector((state: any) => state.authReducer.error)
+    const errorData = useSelector((state: any) => state.authReducer.error);
 
     const validateEmail = (email: any) => {
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

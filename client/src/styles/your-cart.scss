@@ -1,16 +1,34 @@
 .your-cart {
-    &>h1 {
+    h1 {
         text-align: center;
         text-transform: uppercase;
         font-size: 4rem;
         font-weight: 600;
         margin: 50px 50px;
     }
+
+    .submit-order {
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+        padding: 10px 25px;
+        background-color: #1F60DA;
+        border: none;
+        font-size: 2rem;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid #fff;
+        transition: 0.2s ease;
+
+        &:hover {
+            background-color: #4483DB;
+        }
+    }
 }
 
 @media (max-width: 1150px) {
     .your-cart {
-        &>h1 {
+        h1 {
             font-size: 3rem;
         }
     }
@@ -18,15 +36,19 @@
 
 @media (max-width: 600px) {
     .your-cart {
-        &>h1 {
+        h1 {
             font-size: 2.25rem;
+        }
+
+        .submit-order {
+            font-size: 1.75rem;
         }
     }
 }
 
 @media (max-width: 450px) {
     .your-cart {
-        &>h1 {
+        h1 {
             margin: 50px 25px;
             font-size: 2rem;
         }
@@ -35,7 +57,7 @@
 
 @media (max-width: 350px) {
     .your-cart {
-        &>h1 {
+        h1 {
             font-size: 1.75rem;
         }
     }

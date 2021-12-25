@@ -48,7 +48,7 @@
                 font-weight: 500;
                 cursor: pointer;
 
-                &.login-btn {
+                &.signin-btn {
                     color: #0000ff;
                 }
 
@@ -59,7 +59,7 @@
         }
     }
 
-    i {
+    .bars {
         display: none;
         font-size: 2.5rem;
         cursor: pointer;
@@ -72,7 +72,7 @@
             display: none;
         }
 
-        i {
+        .bars {
             display: inline-block;
         }
     }
@@ -88,7 +88,7 @@
             }
         }
 
-        i {
+        .bars {
             font-size: 2rem;
         }
     }

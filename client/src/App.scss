@@ -8,3 +8,12 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+input[type=number]:disabled {
+    cursor: not-allowed;
+}

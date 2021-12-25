@@ -1,0 +1,32 @@
+.modal {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+
+    padding: 20px;
+
+    background-color: #1F60DA;
+    color: #fff;
+    border: none;
+    border-bottom: none;
+    transform: translate(-50%, 500px);
+    width: 400px;
+    transition: transform 0.3s ease;
+    z-index: 200;
+    text-align: center;
+
+    p {
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal {
+        width: 300px;
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+}
