@@ -1,0 +1,17 @@
+.order {
+    display: inline-block;
+
+    margin: 50px;
+    padding: 25px;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+    .order-price {
+        margin-top: 10px;
+        font-size: 2rem;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}

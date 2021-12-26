@@ -1,10 +1,8 @@
 import Order from "../models/order";
 
 export const submitOrder = async (req: any, res: any) => {
-    const { email, items, totalPrice } = req.body;
-
     try {
-        const result = await Order.create({ email, items });
+        const result = await Order.create({ customer: req.body.customer, items: req.body.items, totalPrice: req.body.totalPrice });
         res.status(201).json({ result });
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });

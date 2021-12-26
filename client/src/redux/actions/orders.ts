@@ -1,16 +1,15 @@
 import { FETCH_ALL, SUBMIT_ORDER } from '../../constants/actionTypes';
 import * as api from '../../api/index';
 
-export const submitOrder = (orderData: any, router: any) => async (dispatch: any) => {
+export const submitOrder = (orderData: any) => async (dispatch: any) => {
     try {
-        const { data } = await api.signUp(orderData);
+        await api.submitOrder(orderData);
 
-        dispatch({ type: SUBMIT_ORDER, data });
+        dispatch({ type: SUBMIT_ORDER });
     } catch (error) {
         dispatch({ type: SUBMIT_ORDER, errors: error });
         return console.log(error);
     }
-    router('/');
 }
 
 export const getOrders = (customer: any) => async (dispatch: any) => {

@@ -49,7 +49,9 @@ const Signup = () => {
         if (!passwordConfirmRef.current.value)
             return setError("Confirm password");
         if (!validateEmail(emailRef.current.value))
-            setError("Email is not valid");
+            return setError("Email is not valid");
+        if (passwordRef.current.value.length < 8)
+            return setError("Password must have at least 8 characters.");
         if (passwordRef?.current.value !== passwordConfirmRef?.current.value)
             return setError("Passwords don't match");
         if (errorData || errorData !== "")

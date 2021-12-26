@@ -1,11 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import userRouter from "./routes/user";
 import ordersRouter from "./routes/orders";
 import mongoose from "mongoose";
 
+dotenv.config();
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb" }));
@@ -15,9 +17,7 @@ app.use(cors());
 app.use("/user", userRouter);
 app.use("/orders", ordersRouter);
 
-const password = "branislav123";
-
-mongoose.connect(`mongodb+srv://mache4:${password}@cluster0.fodof.mongodb.net/shirts-project?`)
+mongoose.connect(`${process.env.MONGODB_URI}`)
     .then(() => console.log("MongoDB connected."))
     .catch((err) => console.log(err));
 

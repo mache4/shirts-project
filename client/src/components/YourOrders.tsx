@@ -21,13 +21,18 @@ const YourOrders = () => {
             key={order._id}
             customer={order.customer}
             items={order.items}
-            totalPrice={order.totalPrice} />);
+            totalPrice={order.totalPrice}
+            date={order.createdAt} />);
 
     return (
         <div className="your-orders">
             {!localStorage.getItem("profile") || localStorage.getItem("profile") === "{}" ?
-                <h1 className="message">You need to signin to see your orders.</h1> :
-                orders
+                <h3 className="message">You need to signin to see your orders.</h3> :
+                <>
+                    <h1>Your Orders</h1>
+                    <h2>{user.result.email}</h2>
+                    {orders}
+                </>
             }
         </div>
     );

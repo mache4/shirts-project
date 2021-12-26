@@ -5,6 +5,7 @@ import decode from 'jwt-decode';
 import { LOGOUT } from "../constants/actionTypes";
 import { FaBars } from "react-icons/fa";
 import "../styles/navbar.scss";
+import Modal from "./Modal";
 
 import Sidebar from "./Sidebar";
 import Overlay from "./Overlay";
@@ -13,6 +14,7 @@ const Navbar = () => {
     const history = useNavigate();
     const location = useLocation();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile') || "{}"));
+    const [modal, setModal] = useState(false);
     const [sidebar, setSidebar] = useState(false);
     const dispatch = useDispatch();
 
@@ -37,6 +39,11 @@ const Navbar = () => {
     const logout = () => {
         localStorage.clear();
         dispatch({ type: LOGOUT });
+
+        setModal(true);
+        window.setTimeout(() => {
+            setModal(false);
+        }, 1000);
 
         history("/signin");
     }
@@ -66,6 +73,10 @@ const Navbar = () => {
                 </ul>
             </nav>
             <FaBars className="bars" onClick={showSidebar} />
+            {/* <Modal show={modal}>
+                Are you sure you want to logout?
+                Yes No
+            </Modal> */}
         </div>
     );
 }
