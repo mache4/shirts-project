@@ -1,7 +1,6 @@
 import "../styles/animations.scss";
 import "../styles/home.scss";
 import Products from "./Products";
-import LazyLoad from "react-lazyload";
 
 import shirt1 from "../assets/shirt1.jpg";
 import shirt2 from "../assets/shirt2.jpg";
@@ -16,9 +15,7 @@ const Home = () => {
                 <img src={shirt2} alt="shirt--2" loading="lazy" className="slide__img big" />
                 <img src={shirt3} alt="shirt--3" loading="lazy" className="slide__img" />
             </div>
-            {/* <LazyLoad once offset={10}> */}
             <Products />
-            {/* </LazyLoad> */}
         </div>
     );
 }
