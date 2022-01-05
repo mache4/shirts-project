@@ -10,7 +10,7 @@
 npm install
 ```
 
-#### After that you need to add .env file in `/server` and in there type your mongodb config:
+#### You need to add .env file in `/server` and in there type your mongodb config:
 ```
 MONGODB_URI='<YOUR_MONGODB_CONFIG>'
 ```
