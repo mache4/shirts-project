@@ -41,7 +41,7 @@ const Signin = () => {
             setError(errorData);
 
         dispatch(signin({
-            email: emailRef?.current.value,
+            email: emailRef?.current.value.trim(),
             password: passwordRef?.current.value
         }, history));
     }

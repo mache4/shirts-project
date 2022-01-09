@@ -16,7 +16,7 @@ export const getOrders = (customer: any) => async (dispatch: any) => {
     try {
         const { data } = await api.getOrders(customer);
 
-        dispatch({ type: FETCH_ALL, data });
+        dispatch({ type: FETCH_ALL, data: data.reverse() });
     } catch (error) {
         dispatch({ type: FETCH_ALL, errors: error });
         return console.log(error);

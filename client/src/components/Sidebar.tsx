@@ -31,8 +31,8 @@ const Sidebar = (props: Props) => {
 
                 <li className="nav__item">
                     {!localStorage.getItem("profile") || localStorage.getItem("profile") === "{}" ?
-                        <Link to="/signin"><button className="signin-btn" onClick={props.clicked}>Signin</button></Link> :
-                        <Link to="/signin"><button className="logout-btn" onClick={logout}>Logout</button></Link>}
+                        <Link to="/signin" onClick={props.clicked}><button className="signin-btn">Signin</button></Link> :
+                        <Link to="/signin" onClick={logout}><button className="logout-btn">Logout</button></Link>}
                 </li>
             </ul>
         </div>
