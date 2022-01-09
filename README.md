@@ -17,7 +17,7 @@ MONGODB_URI='<YOUR_MONGODB_CONFIG>'
 
 #### Last thing is to rename baseURL in `/client/src/api/index.ts` file to:
 ```js
-const API = axios.create({ baseURL: 'https://localhost:5000' });
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 ```
 
 #### To start both applications on localhost run:
