@@ -51,7 +51,7 @@ const Signup = () => {
         if (!validateEmail(emailRef.current.value))
             return setError("Email is not valid");
         if (passwordRef.current.value.length < 8)
-            return setError("Password must have at least 8 characters.");
+            return setError("Password must have at least 8 characters");
         if (passwordRef?.current.value !== passwordConfirmRef?.current.value)
             return setError("Passwords don't match");
         if (errorData || errorData !== "")
@@ -59,7 +59,8 @@ const Signup = () => {
 
         dispatch(signup({
             email: emailRef?.current.value.trim(),
-            password: passwordRef?.current.value
+            password: passwordRef?.current.value,
+            createdAt: new Date()
         }, history));
     }
 

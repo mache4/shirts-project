@@ -29,6 +29,7 @@ const YourCart = () => {
             customer: user?.result?.email,
             items: cartItemsData,
             totalPrice,
+            createdAt: new Date()
         }));
         dispatch({ type: RESET_CART_ITEMS });
         setModalText("Order Submited.");

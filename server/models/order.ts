@@ -4,10 +4,7 @@ const orderSchema = new mongoose.Schema({
     customer: String,
     items: [],
     totalPrice: Number,
-    createdAt: {
-        type: Date,
-        default: new Date()
-    }
+    createdAt: Date
 });
 
 const Order = mongoose.model("orders", orderSchema);

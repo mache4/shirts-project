@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 const secret = "test";
 
 export const signup = async (req: any, res: any) => {
-    const { email, password } = req.body;
+    const { email, password, createdAt } = req.body;
 
     try {
         const oldUser = await User.findOne({ email });
@@ -14,7 +14,7 @@ export const signup = async (req: any, res: any) => {
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const result = await User.create({ email, password: hashedPassword });
+        const result = await User.create({ email, password: hashedPassword, createdAt });
 
         const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "2h" });
 
