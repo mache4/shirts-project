@@ -2,11 +2,20 @@
     text-align: center;
 
     .message {
-        font-size: 2rem;
+        font-size: 1.75rem;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        .link {
+            color: #1F60DA;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     &>h1 {

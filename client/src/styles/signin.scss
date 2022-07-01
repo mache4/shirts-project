@@ -14,6 +14,7 @@
     .error {
         font-size: 2rem;
         margin: 25px;
+        font-size: 1.5rem;
     }
 
     form {
@@ -24,7 +25,7 @@
         input {
             width: 75%;
             display: block;
-            font-size: 2rem;
+            font-size: 1.5rem;
             padding: 5px 15px;
             margin: 0 auto 50px;
             border: 1px solid #000;
@@ -39,10 +40,11 @@
             padding: 10px 25px;
             background-color: #1F60DA;
             border: none;
-            font-size: 2rem;
+            font-size: 1.25rem;
             font-weight: 500;
             cursor: pointer;
             border: 1px solid #fff;
+            border-radius: 20px;
 
             transition: 0.2s ease;
 
@@ -84,10 +86,6 @@
         form {
             input {
                 font-size: 1.5rem;
-            }
-
-            button {
-                font-size: 1.75rem;
             }
         }
     }

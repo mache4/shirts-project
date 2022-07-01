@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
     overflow: hidden;
     margin: 0 auto 10px;
     width: 75%;
@@ -13,8 +14,9 @@
 
     .remove-item {
         position: absolute;
-        top: 10px;
-        left: 15px;
+        top: 0;
+        left: 0;
+        margin: 20px;
         font-size: 1.5rem;
         color: red;
         cursor: pointer;
@@ -75,8 +77,7 @@
 @media (max-width: 900px) {
     .cart-item {
         .remove-item {
-            top: 5px;
-            left: 10px;
+            margin: 15px;
             font-size: 1rem;
         }
 
@@ -111,6 +112,11 @@
 
 @media (max-width: 600px) {
     .cart-item {
+        .remove-item {
+            margin: 10px;
+            font-size: 0.8rem;
+        }
+    
         .item-name {
             font-size: 1rem;
         }

@@ -4,6 +4,7 @@ import { getOrders } from "../redux/actions/orders";
 import Order from "./Order";
 
 import "../styles/your-orders.scss";
+import { Link } from "react-router-dom";
 
 const YourOrders = () => {
     const user = JSON.parse(localStorage.getItem('profile') || "{}");
@@ -27,7 +28,7 @@ const YourOrders = () => {
     return (
         <div className="your-orders">
             {!localStorage.getItem("profile") || localStorage.getItem("profile") === "{}" ?
-                <h3 className="message">You need to signin to see your orders.</h3> :
+                <h3 className="message">You need to <Link className="link" to="/signin">signin</Link> to see your orders.</h3> :
                 <>
                     <h1>Your Orders</h1>
                     <h2>{user.result.email}</h2>

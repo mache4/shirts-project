@@ -1,0 +1,43 @@
+.footer {
+    background-color: #1F60DA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+
+    .contact {
+        margin-bottom: 5px;
+
+        .icon {
+            font-size: 2rem;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    }
+
+    .info {
+        text-align: center;
+        font-size: 1.25rem;
+
+        .copyright {
+            font-size: 1rem;
+        }
+
+        &>p {
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .footer {
+        .info {
+            font-size: 1rem;
+        
+            .copyright {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

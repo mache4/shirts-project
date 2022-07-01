@@ -1,6 +1,7 @@
 import "../styles/animations.scss";
 import "../styles/home.scss";
 import Products from "./Products";
+import Footer from "./Footer";
 
 import shirt1 from "../assets/shirt1.jpg";
 import shirt2 from "../assets/shirt2.jpg";
@@ -15,7 +16,9 @@ const Home = () => {
                 <img src={shirt2} alt="shirt--2" loading="lazy" className="slide__img big" />
                 <img src={shirt3} alt="shirt--3" loading="lazy" className="slide__img" />
             </div>
+            <h1 className="title-2">Products</h1>
             <Products />
+            <Footer />
         </div>
     );
 }

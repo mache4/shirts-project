@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 100px 0 50px;
+    margin: 50px 0;
 
     .product {
         position: relative;
@@ -12,6 +12,7 @@
         width: 28%;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         overflow: hidden;
+        border-radius: 20px;
 
         margin: 0 15px;
 
@@ -58,7 +59,6 @@
                 background-color: #1F60DA;
                 border: none;
                 border-radius: 20px;
-                width: 135px;
                 font-size: 1rem;
                 font-family: inherit;
                 font-weight: 600;
